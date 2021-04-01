@@ -337,7 +337,7 @@ class GenericAdapter(AbstractComponent):
     @staticmethod
     def escape(term):
         if isinstance(term, str):
-            return quote_plus(term)
+            return quote_plus(quote_plus(term))
         return term
 
     def read(self, external_id, attributes=None, storeview=None):
